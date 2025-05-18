@@ -19,7 +19,7 @@ public class Rest {
 
     @GetMapping("/instructor")
     public String instructor() {
-        return instructorName + " " + instructorDepartment + " " + applicationName;
+        return instructorName + "<br>" + instructorDepartment + "<br/>" + applicationName;
     }
 
 }
