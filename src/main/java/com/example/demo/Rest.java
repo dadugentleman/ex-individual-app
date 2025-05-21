@@ -8,18 +8,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class Rest {
 
-    @Value("application.name")
-    private String applicationName;
+    @GetMapping("/info")
+    public String info() {
+        return printInfo();
+    }
 
-    @Value("instructor.name")
+    @Value("${instructor.name}")
     private String instructorName;
 
-    @Value("instructor.department")
+    @Value("${instructor.department}")
     private String instructorDepartment;
 
-    @GetMapping("/instructor")
-    public String instructor() {
-        return instructorName + "<br>" + instructorDepartment + "<br/>" + applicationName;
+    public String printInfo() {
+        return "Instructor Name: " + instructorName + "<br> Department: " + instructorDepartment;
     }
+
+
 
 }
